@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Dev: Real-Time Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/loader.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <div id="app-container">
+        <div id="auth-screen" class="modal">
+            <div class="modal-content">
+                <h2>Join a Coding Session</h2>
+                <input type="text" id="username-input" placeholder="Enter Username" required />
+                <input type="text" id="room-input" placeholder="Enter Room ID (e.g., room-101)" required />
+                <button id="join-btn">Enter Room</button>
+            </div>
+        </div>
+
+        <div id="editor-screen" class="hidden">
+            <header>
+                <div class="logo">🚀 Co-Dev Studio</div>
+                <div class="room-info">Room: <span id="current-room-id">None</span></div>
+            </header>
+            <div class="workspace">
+                <aside class="sidebar">
+                    <h3>Active Users</h3>
+                    <ul id="user-list"></ul>
+                </aside>
+                <main class="editor-container">
+                    <div id="monaco-editor-root"></div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
